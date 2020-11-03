@@ -9,6 +9,9 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 const App = (props) => {
+
+
+
   return (
     <div className="boxes">
       <div className="box">
@@ -16,7 +19,7 @@ const App = (props) => {
         <AddedFeatures car={props.car} />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
+        <AdditionalFeatures additionalFeatures={props.additionalFeatures} addFeature={props.addFeature}/>
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>

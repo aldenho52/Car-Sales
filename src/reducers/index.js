@@ -21,7 +21,14 @@ const initialState = {
       switch(action.type) {
           case ADD_FEATURE:
               return ({
-
+                  ...state,
+                  features: [...state.features,
+                            {
+                                id: action.payload.id,
+                                name: action.payload.name,
+                                price: action.payload.price
+                            }
+                        ]
               })
           case REMOVE_FEATURE:
               return ({
