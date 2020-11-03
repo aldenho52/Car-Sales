@@ -22,13 +22,16 @@ const initialState = {
           case ADD_FEATURE:
               return ({
                   ...state,
-                  features: [...state.features,
+                  car: {
+                      ...state.car,
+                      features: [...state.car.features,
                             {
                                 id: action.payload.id,
                                 name: action.payload.name,
                                 price: action.payload.price
                             }
                         ]
+                  },
               })
           case REMOVE_FEATURE:
               return ({
