@@ -32,6 +32,7 @@ const initialState = {
                             }
                         ]
                   },
+                  additionalFeatures: state.additionalFeatures.filter(item => item.id !== action.payload.id)
               })
           case REMOVE_FEATURE:
               return ({
