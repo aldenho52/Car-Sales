@@ -36,7 +36,18 @@ const initialState = {
               })
           case REMOVE_FEATURE:
               return ({
-                  
+                  ...state,
+                  car: {
+                      ...state.car,
+                      features: state.car.features.filter(item => item.id !== action.payload.id)
+                  },
+                  additionalFeatures: [...state.additionalFeatures, 
+                    {
+                        id: action.payload.id,
+                        name: action.payload.name,
+                        price: action.payload.price
+                    }
+                ] 
               })
           default:
               return state;
